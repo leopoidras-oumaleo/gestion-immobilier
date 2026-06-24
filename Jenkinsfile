@@ -1,32 +1,47 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven 3.9.9'
+        jdk 'JDK 25'
+    }
+
     stages {
         stage('Checkout') {
             steps {
+                echo 'Checking out source code...'
                 checkout scm
             }
         }
 
         stage('Build') {
             steps {
-                bat 'mvnw.cmd clean package -DskipTests'
+                echo 'Building backend with Maven...'
+                dir('backend') {
+                    bat 'mvn clean package -DskipTests'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvnw.cmd test'
+                echo 'Running tests...'
+                dir('backend') {
+                    bat 'mvn test'
+                }
             }
         }
     }
 
     post {
         success {
-            echo 'Build réussi !'
+            echo '✅ Build and tests completed successfully!'
         }
         failure {
-            echo 'Build échoué !'
+            echo '❌ Build or tests failed!'
+        }
+        always {
+            echo 'Pipeline execution finished.'
         }
     }
 }
