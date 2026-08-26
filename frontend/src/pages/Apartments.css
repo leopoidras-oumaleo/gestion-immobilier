@@ -1,0 +1,57 @@
+.apartments {
+    padding: 2rem;
+    color: #fff;
+}
+
+.apartments h1 {
+    margin-bottom: 1.5rem;
+}
+
+.apartments-status {
+    padding: 2rem;
+    color: #aaa;
+}
+
+.apartments-status.error {
+    color: #ff6b6b;
+}
+
+.apartments-empty {
+    color: #888;
+}
+
+.apartments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.apartment-card {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: border-color 0.2s;
+}
+
+.apartment-card:hover {
+    border-color: #444;
+}
+
+.apartment-card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 0.3rem;
+}
+
+.apartment-card p {
+    color: #999;
+    margin: 0 0 0.8rem;
+}
+
+.apartment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.9rem;
+    color: #ccc;
+}

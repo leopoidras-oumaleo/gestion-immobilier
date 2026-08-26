@@ -8,20 +8,20 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class ApartmentDTO {
     private Long id;
-    private String adress;
+    private String address;
     private String city;
     private double m2;
-    private int buyPrice;
+    private int purchasePrice;
     private int yearConstruction;
 
 
     public ApartmentDTO entityToDtoAppartement(Apartment apartment) {
         return new ApartmentDTO()
                 .setId(apartment.getId())
-                .setAdress(apartment.getAdress())
+                .setAddress(apartment.getAddress())
                 .setCity(apartment.getCity())
                 .setM2(apartment.getM2())
-                .setBuyPrice(apartment.getBuyPrice())
-                .setYearConstruction(apartment.getAnneeConstruction());
+                .setPurchasePrice(apartment.getPurchasePrice())
+                .setYearConstruction(apartment.getConstructionYear());
     }
 }

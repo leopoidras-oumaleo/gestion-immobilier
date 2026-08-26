@@ -15,11 +15,11 @@ public class ApartmentService {
 
     public ApartmentDTO createAppartement(ApartmentDTO dto) {
         Apartment apartment = apartmentRepository.save(new Apartment()
-                .setAdress(dto.getAdress())
+                .setAddress(dto.getAddress())
                 .setCity(dto.getCity())
                 .setM2(dto.getM2())
-                .setBuyPrice(dto.getBuyPrice())
-                .setAnneeConstruction(dto.getYearConstruction()));
+                .setPurchasePrice(dto.getPurchasePrice())
+                .setConstructionYear(dto.getYearConstruction()));
         return dto.entityToDtoAppartement(apartment);
     }
 

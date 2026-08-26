@@ -14,8 +14,8 @@ public class Apartment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "adress", nullable = false)
-    private String adress;
+    @Column(name = "address", nullable = false)
+    private String address;
 
     @Column(name = "city", nullable = false)
     private String city;
@@ -23,9 +23,9 @@ public class Apartment {
     @Column(name = "m2", nullable = false)
     private double m2;
 
-    @Column(name = "buy_price", nullable = false)
-    private int buyPrice;
+    @Column(name = "purchase_price", nullable = false)
+    private int purchasePrice;
 
-    @Column(name = "year_construction")
-    private int anneeConstruction;
+    @Column(name = "construction_year")
+    private int constructionYear;
 }
