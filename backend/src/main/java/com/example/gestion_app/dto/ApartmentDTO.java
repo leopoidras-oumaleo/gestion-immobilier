@@ -10,18 +10,30 @@ public class ApartmentDTO {
     private Long id;
     private String address;
     private String city;
-    private double m2;
+    private double squareMeters;
     private int purchasePrice;
-    private int yearConstruction;
+    private int constructionYear;
 
+    private Integer downPayment;
+    private Integer notaryFees;
+    private Integer brokerFees;
+    private Integer fileFees;
+    private Integer guaranteeFees;
+    private Integer propertyTax;
 
     public ApartmentDTO entityToDtoAppartement(Apartment apartment) {
         return new ApartmentDTO()
                 .setId(apartment.getId())
                 .setAddress(apartment.getAddress())
                 .setCity(apartment.getCity())
-                .setM2(apartment.getM2())
+                .setSquareMeters(apartment.getSquareMeters())
                 .setPurchasePrice(apartment.getPurchasePrice())
-                .setYearConstruction(apartment.getConstructionYear());
+                .setConstructionYear(apartment.getConstructionYear())
+                .setDownPayment(apartment.getDownPayment())
+                .setNotaryFees(apartment.getNotaryFees())
+                .setBrokerFees(apartment.getBrokerFees())
+                .setFileFees(apartment.getFileFees())
+                .setGuaranteeFees(apartment.getGuaranteeFees())
+                .setPropertyTax(apartment.getPropertyTax());
     }
 }

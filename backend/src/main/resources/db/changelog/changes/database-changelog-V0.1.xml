@@ -16,7 +16,7 @@
             <column name="city" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="m2" type="DOUBLE">
+            <column name="square_meters" type="DOUBLE">
                 <constraints nullable="false"/>
             </column>
             <column name="purchase_price" type="INTEGER">
@@ -26,6 +26,17 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
+    </changeSet>
+
+    <changeSet id="2_add_apartment_financial_fields" author="Oumaleo">
+        <addColumn tableName="apartment">
+            <column name="down_payment" type="INTEGER"/>
+            <column name="notary_fees" type="INTEGER"/>
+            <column name="broker_fees" type="INTEGER"/>
+            <column name="file_fees" type="INTEGER"/>
+            <column name="guarantee_fees" type="INTEGER"/>
+            <column name="property_tax" type="INTEGER"/>
+        </addColumn>
     </changeSet>
 
 </databaseChangeLog>

@@ -17,9 +17,15 @@ public class ApartmentService {
         Apartment apartment = apartmentRepository.save(new Apartment()
                 .setAddress(dto.getAddress())
                 .setCity(dto.getCity())
-                .setM2(dto.getM2())
+                .setSquareMeters(dto.getSquareMeters())
                 .setPurchasePrice(dto.getPurchasePrice())
-                .setConstructionYear(dto.getYearConstruction()));
+                .setConstructionYear(dto.getConstructionYear())
+                .setDownPayment(dto.getDownPayment())
+                .setNotaryFees(dto.getNotaryFees())
+                .setBrokerFees(dto.getBrokerFees())
+                .setFileFees(dto.getFileFees())
+                .setGuaranteeFees(dto.getGuaranteeFees())
+                .setPropertyTax(dto.getPropertyTax()));
         return dto.entityToDtoAppartement(apartment);
     }
 
