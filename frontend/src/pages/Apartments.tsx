@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {createApartment, getApartments} from '../api/apartmentApi';
 import {type Apartment} from '../types/Apartment.ts';
 import './Apartments.css';
+import { Link } from 'react-router-dom';
 
 const emptyForm: Omit<Apartment, 'id'> = {
     address: undefined,
@@ -173,39 +174,9 @@ const Apartments = () => {
             ) : (
                 <div className="apartments-grid">
                     {apartments.map((apt) => (
-                        <div key={apt.id} className="apartment-card">
-                            <h2>{apt.address}</h2>
-                            <p>{apt.city}</p>
-                            <div className="apartment-details">
-                                {apt.squareMeters !== undefined && (
-                                    <span>Square Meters: {apt.squareMeters.toLocaleString()} ²</span>
-                                )}
-                                {apt.purchasePrice !== undefined && (
-                                    <span>Purchase Price: {apt.purchasePrice.toLocaleString()} €</span>
-                                )}
-                                {apt.constructionYear !== undefined && (
-                                    <span>Construction Year: {apt.constructionYear.toLocaleString()}</span>
-                                )}
-                                {apt.downPayment !== undefined && (
-                                    <span>Down payment: {apt.downPayment.toLocaleString()} €</span>
-                                )}
-                                {apt.notaryFees !== undefined && (
-                                    <span>Notary fees: {apt.notaryFees.toLocaleString()} €</span>
-                                )}
-                                {apt.brokerFees !== undefined && (
-                                    <span>Broker fees: {apt.brokerFees.toLocaleString()} €</span>
-                                )}
-                                {apt.fileFees !== undefined && (
-                                    <span>File fees: {apt.fileFees.toLocaleString()} €</span>
-                                )}
-                                {apt.guaranteeFees !== undefined && (
-                                    <span>Guarantee fees: {apt.guaranteeFees.toLocaleString()} €</span>
-                                )}
-                                {apt.propertyTax !== undefined && (
-                                    <span>Property tax: {apt.propertyTax.toLocaleString()} €</span>
-                                )}
-                            </div>
-                        </div>
+                        <Link key={apt.id} to={`/apartments/${apt.id}`} className="apartment-card">
+                            <h2>{apt.city} · {apt.squareMeters} m² · {apt.address}</h2>
+                        </Link>
                     ))}
                 </div>
             )}

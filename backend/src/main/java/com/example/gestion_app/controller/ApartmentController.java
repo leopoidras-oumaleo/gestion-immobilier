@@ -25,4 +25,9 @@ public class ApartmentController {
     public ResponseEntity<List<ApartmentDTO>> getAllAppartements() {
         return ResponseEntity.ok(apartmentService.getAllAppartements());
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ApartmentDTO> getAppartementById(@PathVariable Long id) {
+        return ResponseEntity.ok(apartmentService.getAppartementById(id));
+    }
 }
