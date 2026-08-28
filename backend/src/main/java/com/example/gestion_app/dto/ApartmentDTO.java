@@ -11,8 +11,8 @@ public class ApartmentDTO {
     private String address;
     private String city;
     private double squareMeters;
-    private int purchasePrice;
-    private int constructionYear;
+    private Integer purchasePrice;
+    private Integer constructionYear;
 
     private Integer downPayment;
     private Integer notaryFees;

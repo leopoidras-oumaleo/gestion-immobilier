@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getApartmentById } from '../api/apartmentApi';
-import { type Apartment } from '../types/Apartment.ts';
+import {useEffect, useState} from 'react';
+import {Link, useParams} from 'react-router-dom';
+import {getApartmentById} from '../api/apartmentApi';
+import {type Apartment} from '../types/Apartment.ts';
 import './Apartments.css';
 
 const ApartmentDetail = () => {
-    const { id } = useParams<{ id: string }>();
+    const {id} = useParams<{ id: string }>();
     const [apartment, setApartment] = useState<Apartment | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -27,25 +27,26 @@ const ApartmentDetail = () => {
             <Link to="/apartments" className="back-link">&larr; Back to list</Link>
             <h1>{apartment.city} · {apartment.squareMeters} m² · {apartment.address}</h1>
             <div className="apartment-details">
-                <span>Purchase price: {apartment.purchasePrice.toLocaleString()} €</span>
-                <span>Built in {apartment.constructionYear}</span>
-                {apartment.downPayment !== undefined && (
+                {apartment.purchasePrice != null && (
+                    <span>Purchase price: {apartment.purchasePrice.toLocaleString()} €</span>
+                )}
+                {apartment.constructionYear != null && (
+                    <span>Built in {apartment.constructionYear}</span>
+                )}
+                {apartment.downPayment != null && (
                     <span>Down payment: {apartment.downPayment.toLocaleString()} €</span>
                 )}
-                {apartment.notaryFees !== undefined && (
+                {apartment.notaryFees != null && (
                     <span>Notary fees: {apartment.notaryFees.toLocaleString()} €</span>
                 )}
-                {apartment.brokerFees !== undefined && (
+                {apartment.brokerFees != null && (
                     <span>Broker fees: {apartment.brokerFees.toLocaleString()} €</span>
                 )}
-                {apartment.fileFees !== undefined && (
+                {apartment.fileFees != null && (
                     <span>File fees: {apartment.fileFees.toLocaleString()} €</span>
                 )}
-                {apartment.guaranteeFees !== undefined && (
+                {apartment.guaranteeFees != null && (
                     <span>Guarantee fees: {apartment.guaranteeFees.toLocaleString()} €</span>
-                )}
-                {apartment.propertyTax !== undefined && (
-                    <span>Property tax: {apartment.propertyTax.toLocaleString()} €</span>
                 )}
             </div>
         </div>

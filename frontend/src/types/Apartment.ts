@@ -1,14 +1,13 @@
 export interface Apartment {
     id: number;
-    address?: string;
-    city?: string;
-    purchasePrice?: number;
-    squareMeters?: number;
-    constructionYear?: number;
-    downPayment?: number;
-    notaryFees?: number;
-    brokerFees?: number;
-    fileFees?: number;
-    guaranteeFees?: number;
-    propertyTax?: number;
+    address: string;
+    city: string;
+    squareMeters: number;
+    purchasePrice?: number | null;
+    constructionYear?: number | null;
+    downPayment?: number | null;
+    notaryFees?: number | null;
+    brokerFees?: number | null;
+    fileFees?: number | null;
+    guaranteeFees?: number | null;
 }

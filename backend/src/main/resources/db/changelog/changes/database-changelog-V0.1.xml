@@ -39,4 +39,9 @@
         </addColumn>
     </changeSet>
 
+    <changeSet id="3_make_apartment_fields_nullable" author="Oumaleo">
+        <dropNotNullConstraint tableName="apartment" columnName="purchase_price" columnDataType="INTEGER"/>
+        <dropNotNullConstraint tableName="apartment" columnName="construction_year" columnDataType="INTEGER"/>
+    </changeSet>
+
 </databaseChangeLog>

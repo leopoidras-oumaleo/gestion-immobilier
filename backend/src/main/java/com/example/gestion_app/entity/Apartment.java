@@ -23,11 +23,11 @@ public class Apartment {
     @Column(name = "square_meters", nullable = false)
     private double squareMeters;
 
-    @Column(name = "purchase_price", nullable = false)
-    private int purchasePrice;
+    @Column(name = "purchase_price")
+    private Integer purchasePrice;
 
     @Column(name = "construction_year")
-    private int constructionYear;
+    private Integer constructionYear;
 
     @Column(name = "down_payment")
     private Integer downPayment;
